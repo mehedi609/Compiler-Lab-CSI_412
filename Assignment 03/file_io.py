@@ -14,7 +14,7 @@ def get_value_from_output(token):
                 if token == var:
                     return value
 
-print(get_value_from_output('a'))
+# print(get_value_from_output('a'))
 
 
 # with open('input.txt') as rf:
@@ -27,4 +27,6 @@ print(get_value_from_output('a'))
 #         print(line)
 #         # with open('output.txt', 'a') as af:
 #         #     af.write(line)
+
+print(list('28a'))
 

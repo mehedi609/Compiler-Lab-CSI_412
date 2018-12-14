@@ -6,6 +6,7 @@ def infixToPostfix(infixexpr):
     opStack = Stack()
     postfixList = []
     tokenList = list(infixexpr)
+    # tokenList = infixexpr.split()
 
     for token in tokenList:
         if token in "ABCDEFGHIJKLMNOPQRSTUVWXYZ".lower() or token in "0123456789":
@@ -27,5 +28,6 @@ def infixToPostfix(infixexpr):
         postfixList.append(opStack.pop())
     return " ".join(postfixList)
 
-print(infixToPostfix("a*b+c*d"))
+# print(infixToPostfix("a*b+c*d"))
+print(infixToPostfix("(a+b*c-d)+(e/f-g)"))
 # print(infixToPostfix("( a + b ) * c - ( d - e ) * ( f + g )"))
