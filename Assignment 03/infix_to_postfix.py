@@ -1,13 +1,14 @@
 from pythonds.basic.stack import Stack
 
+
 def infixToPostfix(infixexpr):
     prec = {"*": 3, "/": 3, "+": 2, "-": 2, "(": 1}
     opStack = Stack()
     postfixList = []
-    tokenList = infixexpr.split()
+    tokenList = list(infixexpr)
 
     for token in tokenList:
-        if token in "ABCDEFGHIJKLMNOPQRSTUVWXYZ" or token in "0123456789":
+        if token in "ABCDEFGHIJKLMNOPQRSTUVWXYZ".lower() or token in "0123456789":
             postfixList.append(token)
         elif token == '(':
             opStack.push(token)
@@ -26,5 +27,5 @@ def infixToPostfix(infixexpr):
         postfixList.append(opStack.pop())
     return " ".join(postfixList)
 
-print(infixToPostfix("A * B + C * D"))
-print(infixToPostfix("( A + B ) * C - ( D - E ) * ( F + G )"))
+print(infixToPostfix("a*b+c*d"))
+# print(infixToPostfix("( a + b ) * c - ( d - e ) * ( f + g )"))
